@@ -298,7 +298,7 @@ case "$1" in
         auth_path=$(cat $panel_path/data/admin_path.pl)
     fi
     if [ "$address" = "" ]; then
-        address=$(curl -s myip.ipip.net | grep "IP：" | awk -F' ' '{print $2}' | awk -F'：' '{print $2}')
+        address=$(curl -s api-ipv4.ip.sb/ip)
     fi
     pool=http
     if [ -f $panel_path/data/ssl.pl ]; then

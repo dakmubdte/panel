@@ -774,7 +774,7 @@ Set_Firewall() {
 #「获取服务器地址」
 Get_Ip_Address() {
   getIpAddress=""
-  getIpAddress=$(curl -s myip.ipip.net | grep "IP：" | awk -F' ' '{print $2}' | awk -F'：' '{print $2}')
+  getIpAddress=$(curl -s api-ipv4.ip.sb/ip)
 
   ipv4Check=$($python_bin -c "import re; print(re.match('^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$','${getIpAddress}'))")
   if [ "${ipv4Check}" == "None" ]; then
